@@ -1,20 +1,9 @@
 ACTIVE
 Primary
 
-3b. Fix the date formatted
-  #yeah. so. this isn't working out quite as well as I'd hoped. the problem is that the date is formatted insanely. I *think* that there
-#might be a way to use SQL CONVERT to fix it though. either that or I’ll write a thing that will loop line-by-line find the date area
-#and define the components as variables separated by spaces and then have a string constructed from those variables reinserted to its spot.
-
-scrub GMT offset adjustment
-possible fix:
-delete the GMT offset information and use "STR_TO_DATE" to put the good data into a new field.
-
 Secondary
 
 3. Schedule chron task to run import script
-4. solve problem of duplicate SIDs coming from Twilio - out of ~3k messages, there were 14 fully duplicate messages with
-duplicate SIDs. This amounts to a rounding error, but it has to be discussed. 
 
 
 Tertiary
@@ -30,9 +19,24 @@ we need to come up with a way to handle *valid* null values in the price field.
 the issue is that failed messages have a null cost. So, my inclination is to write a thing that will
 loop through status, and if it finds a "failed" response, change price from "null" to "0.0"
 
+ACCOMPLISHED 3b. Fix the date formatted
+  #yeah. so. this isn't working out quite as well as I'd hoped. the problem is that the date is formatted insanely. I *think* that there
+#might be a way to use SQL CONVERT to fix it though. either that or I’ll write a thing that will loop line-by-line find the date area
+#and define the components as variables separated by spaces and then have a string constructed from those variables reinserted to its spot.
+
+ACCOMPLISHED scrub GMT offset adjustment
+possible fix:
+delete the GMT offset information and use "STR_TO_DATE" to put the good data into a new field.
+
+
+
+
 Secondary:
 ACCOMPLISHED 1. Test standard date variables in download script. (I'm the Juggernaut, bitch!)
 ACCOMPLISHED 2. Modify import script to ignore duplicate SIDs on messages (secondary only because reporting can always go off unique SID values)
+
+OBVIATED 4. solve problem of duplicate SIDs coming from Twilio - out of ~3k messages, there were 14 fully duplicate messages with
+duplicate SIDs. This amounts to a rounding error, but it has to be discussed.
 
 Tertiary:
 OBVIATED 1. If standard variables fail, write script to modify/write date rage values into import script
