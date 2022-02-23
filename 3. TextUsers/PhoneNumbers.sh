@@ -1,0 +1,1 @@
+twilio phone-numbers:list --properties="sid, phoneNumber, friendlyName" >> PhoneNumbers.tsv
