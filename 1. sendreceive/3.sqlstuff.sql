@@ -1,5 +1,5 @@
 /* here we change the price column to varchar(8) so we can import
-the price including the null values. maybe I can combine this, but I don't know*/
+the price including the null values.*/
 alter table sendreceive modify price VARCHAR(8);
 /*here we take the data from the downloaded file and dump it into the DB.
 I need to find a way to generalize this. or maybe put the whole thing into the git proj*/
