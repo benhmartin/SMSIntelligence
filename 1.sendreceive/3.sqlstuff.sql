@@ -3,7 +3,7 @@ the price including the null values.*/
 alter table sendreceive modify price VARCHAR(8);
 /*here we take the data from the downloaded file and dump it into the DB.
 I need to find a way to generalize this. or maybe put the whole thing into the git proj*/
-LOAD DATA INFILE '/sms/sendreceivetabbed.tsv' INTO TABLE smsintelligence.sendreceive FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
+LOAD DATA INFILE '/sms/datatabbed.tsv' INTO TABLE smsintelligence.sendreceive FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n';
 /*this step changes the price to 0.0 from failed where the status of the messages
 was failed */
 update sendreceive

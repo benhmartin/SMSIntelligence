@@ -9,5 +9,5 @@ twilio api:core:messages:list --no-limit --properties="sid,from,to,dateCreated,s
 --date-sent-after  $todate \
 --date-sent-before $fromdate \
   | while read -r row ; do
-    echo "$row" >> data.tsv
+    echo "$row" >> /sms/data.tsv
   done
